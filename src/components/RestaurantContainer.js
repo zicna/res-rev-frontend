@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import { connect } from 'react-redux'
+
+import {getRestaurants} from '../redux/actions/restaurantAction'
+
 class RestaurantContainer extends Component {
   constructor(props) {
     super(props);
@@ -10,9 +14,8 @@ class RestaurantContainer extends Component {
 
   getRestaurants = () => {
       console.log('helllo')
-    fetch('http://localhost:3001/restaurants')
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+      this.props.dispatchSetRestaurants()
+    
   };
   render() {
     return (
@@ -23,6 +26,17 @@ class RestaurantContainer extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  }
+}
+const mapDispatchToPRops = (dispatch) => {
+  return {
+    dispatchSetRestaurants: () => dispatch(getRestaurants())
+  }
+}
 
 
-export default RestaurantContainer;
+
+export default connect(mapStateToProps, mapDispatchToPRops)(RestaurantContainer);
