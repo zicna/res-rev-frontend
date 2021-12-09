@@ -1,4 +1,6 @@
-const GET_RESTAURANTS = "GET_RESTAURANS";
+// * thunk gives us acces to dispatch within action creator
+
+const GET_RESTAURANTS = "GET_RESTAURANTS";
 
 const resURL = "http://localhost:3001/restaurants";
 
@@ -7,7 +9,6 @@ export const getRestaurants = () => {
     fetch(resURL)
       .then((response) => response.json())
       .then((data) => {
-          console.log(data)
           dispatch({type: GET_RESTAURANTS, payload: data})
         });
   };
