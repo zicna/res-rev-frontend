@@ -10,7 +10,7 @@ export default class ImageContainer extends Component {
 
         return (
             <div>
-                <img src={this.props.image} alt="restaurant image" />
+                <img src={this.props.image} alt="restaurant image"  style={{width: '50%', height: '140px'}}/>
             </div>
         )
     }
