@@ -1,21 +1,24 @@
 const defState = {
-    restaurants: []
-}
+  restaurants: [],
+};
 
-const restaurantReducer = (state=defState, action) => {
-
+const restaurantReducer = (state = defState, action) => {
   switch (action.type) {
-    
     case "GET_RESTAURANTS":
-      console.log('inside reducer')
+      console.log("inside reducer");
       return {
         ...state,
-        restaurants: action.payload
+        restaurants: action.payload,
+      };
+    case "ADD_RESTAURANT":
+      return {
+        ...state,
+        restaurants: [...state.restaurants, action.payload],
       };
     default:
-      console.log('inside default')
+      console.log("inside default");
 
       return state;
   }
 };
-export default restaurantReducer
+export default restaurantReducer;
