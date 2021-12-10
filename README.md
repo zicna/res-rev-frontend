@@ -1,3 +1,57 @@
+# Restaurant Reviewer Application
+
+---
+
+### Intro:
+
+This application is part of my final step of the Flatiron Bootcamp voyage. Here we can add new restaurants or browse through ones already in it and create reviews for them as a guide for a better restaurant experience. Enjoy!
+![](https://image.shutterstock.com/image-photo/five-stars-on-dark-background-260nw-645742324.jpg)
+
+---
+
+### Table of content
+
+1. [Description](#description)
+2. [About Backend ](#about-backend)
+3. [About Frontend](@about-frontend)
+4. [How to install this application](#how-to-install)
+5. [How to use this application](#how-to-use)
+6. [Future upgrades](#future-upgrades)
+7. [Bugs](#Bugs)
+8. [License](#License)
+
+## Description
+
+---
+
+## About Backend
+
+---
+
+## About Frontend
+
+---
+
+## How To Install
+
+---
+
+## How To Use
+
+---
+
+## Future Uppgrades
+
+---
+
+## Bugs
+
+---
+
+## License
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
