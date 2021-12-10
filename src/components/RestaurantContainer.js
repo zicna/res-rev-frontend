@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import {getRestaurants} from '../redux/actions/restaurantAction'
 
+
 import RestaurantCard from "./RestaurantCard";
+import RestaurantList from "./RestaurantList";
 
 class RestaurantContainer extends Component {
   constructor(props) {
@@ -26,8 +28,9 @@ class RestaurantContainer extends Component {
   render() {
     return (
       <div>
+        <RestaurantList restaurants={this.props.restaurants}/>
         {/* {this.renderRestaurants()} */}
-        {this.props.restaurants.map(res => <RestaurantCard key={res.id} restaurant={res} />)}
+        {/* {this.props.restaurants.map(res => <RestaurantCard key={res.id} restaurant={res} />)} */}
       </div>
     );
   }
