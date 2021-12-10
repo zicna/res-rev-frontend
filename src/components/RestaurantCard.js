@@ -4,7 +4,7 @@ import ImageContainer from './ImageContainer'
 export default class RestaurantCard extends Component {
     render() {
         return (
-            <div className='card mb-3'>
+            <div className='card mb-3' style={{width: '75%'}}>
                 <h3 className='card-header'>{this.props.restaurant.name}</h3>
                 <div className='card-body'>
                     <h6 className='card-subtitle text-muted'>{this.props.restaurant.res_type}</h6>
