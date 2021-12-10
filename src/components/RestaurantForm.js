@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-export default class RestaurantForm extends Component {
+import { connect } from 'react-redux'
+import { addRestaurant } from "../redux/actions/restaurantAction";
+
+class RestaurantForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,6 +23,18 @@ export default class RestaurantForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    const {name, location, res_type, image, description} = this.state
+    const resObj = {
+      restaurant:{
+        name,
+        location,
+        res_type,
+        image,
+        description
+      }
+    }
+
+    this.props.dispatchAddRestaurant(resObj)
 
     // * reset local state after submiting form
     this.setState({
@@ -104,3 +119,11 @@ export default class RestaurantForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchAddRestaurant: (restaurantObj) => dispatch(addRestaurant(restaurantObj))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(RestaurantForm)
