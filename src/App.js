@@ -1,4 +1,4 @@
-import MainHeader from './components/MainHeader'
+import NavBar from './components/NavBar'
 
 import { BrowserRouter as Router} from 'react-router-dom'
 import Layout from "./pages/Layout";
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <MainHeader />
+        <NavBar />
         <Layout />
       </Router>
     </div>
