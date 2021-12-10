@@ -13,16 +13,6 @@ class RestaurantContainer extends Component {
     };
   }
 
-  // getRestaurants = () => {
-  //     console.log('helllo')
-  //     this.props.dispatchSetRestaurants()
-  //   // this.props.restaurants.map(res => <RestaurantCard key={res.id} restaurant={res}/>)
-  //   this.props.restaurants.map(res => <div>{res.name}</div>)
-
-
-    
-  // };
-
   componentDidMount(){
       this.props.dispatchSetRestaurants()
     
