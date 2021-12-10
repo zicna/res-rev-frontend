@@ -19,7 +19,7 @@ export default class RestaurantForm extends Component {
     }
 
     handleSubmit = (event) => {
-        event.prevetDefault()
+        event.preventDefault();
 
         // * reset local state after submiting form 
         this.setState({
@@ -29,6 +29,7 @@ export default class RestaurantForm extends Component {
             image: '',
             description: ''
         })
+        this.props.toggleForm()
     }
     render() {
         return (
