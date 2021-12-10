@@ -26,7 +26,7 @@ class RestaurantContainer extends Component {
   render() {
     return (
       <div>
-        {this.renderRestaurants()}
+        {/* {this.renderRestaurants()} */}
         {this.props.restaurants.map(res => <RestaurantCard key={res.id} restaurant={res} />)}
       </div>
     );
