@@ -3,7 +3,7 @@ import Header from './pages/Header'
 import Footer from './pages/Footer'
 
 import { BrowserRouter as Router } from "react-router-dom";
-import RoutesLayout from "./pages/RoutesLayout";
+import MainContainer from "./containers/MainContainer";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Router>
         <NavBar />
-        <RoutesLayout />
+        <MainContainer />
       </Router>
       <Footer />
     </div>
