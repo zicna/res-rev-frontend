@@ -22,6 +22,7 @@ export default class RestaurantList extends Component {
       newRestaurant: true,
     });
   };
+  
   render() {
     return (
       <div>
@@ -32,11 +33,11 @@ export default class RestaurantList extends Component {
         )}
         {this.props.restaurants.map((res) => {
           return (
-            <div>
-              <p key={res.id}>{res.name}</p>
-              <button>Edit</button>
-              <button>Delete</button>
-              <button>Show</button>
+            <div key={res.id}>
+              <p >{res.name}</p>
+              {/* <button>Edit</button>
+              <button onClick={this.handleDelete}>Delete</button> */}
+              <button>Show More</button>
             </div>
           );
         })}

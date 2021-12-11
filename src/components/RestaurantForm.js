@@ -46,6 +46,11 @@ class RestaurantForm extends Component {
     });
     this.props.toggleForm();
   };
+
+  handleCancel = () => {
+    this.props.toggleForm();
+
+  }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -110,6 +115,9 @@ class RestaurantForm extends Component {
                 required
               />
             </div>
+          </div>
+          <div className="col-sm-10">
+            <button onClick={this.handleCancel}>Cancel</button>
           </div>
           <div className="col-sm-10">
             <input type="submit" value="Create New Restaurant" />
