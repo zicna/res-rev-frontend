@@ -1,18 +1,13 @@
-import React, { Component } from 'react'
-import ReviewCard from './ReviewCard'
+import React from "react";
+import ReviewCard from "./ReviewCard";
 
-export default class Reviews extends Component {
+const Reviews = ({reviews}) => {
+  const renderReviews = () => {
+    return reviews.map((review) => (
+      <ReviewCard key={review.id} review={review} />
+    ));
+  };
+  return <div>{renderReviews()}</div>;
+};
 
-    renderReviews = () => {
-        return this.props.reviews.map(review => (
-        <ReviewCard key={review.id} review={review} />
-        ))
-    }
-    render() {
-        return (
-            <div>
-                {this.renderReviews()}
-            </div>
-        )
-    }
-}
+export default Reviews;
