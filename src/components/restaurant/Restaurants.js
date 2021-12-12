@@ -24,12 +24,16 @@ export default class Restaurants extends Component {
     });
   };
 
-  renderRestaurants = () =>
-    this.props.restaurants.map((r) => (
-      <Link key={r.id} to={`${this.props.match.url}/${r.id}`}>
+  renderRestaurants = () =>{
+    const {restaurants, match} = this.props
+    
+     return restaurants.map((r) => (
+      <Link key={r.id} to={`${match.url}/${r.id}`}>
         <div>{r.name}</div>
       </Link>
     ));
+  }
+  
   render() {
     return (
       <div>
