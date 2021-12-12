@@ -30,3 +30,15 @@ export const addRestaurant = (restaurantObject) => {
       });
   };
 };
+
+export const deleteRestaurant = (id) => {
+  return (dispatch) => {
+    fetch(`${resURL}/${id}`, {
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({ type: "DELETE_RESTAURANT", payload: data });
+      });
+  };
+};
