@@ -6,10 +6,6 @@ export default class RestaurantCard extends Component {
     const { match, restaurants } = this.props;
     const resObj = restaurants[match.params.id - 1];
 
-    // const {description, name, rating, image, res_type, location, reviews} = restaurants[match.params.id - 1]
-    // console.log(resObj.name)
-    // debugger
-    // const {description, name, rating, image, res_type, location, reviews} = resObj
     return (
       <div className="card mb-3" style={{ width: "75%" }}>
         <h3 className="card-header">{resObj.name}</h3>
