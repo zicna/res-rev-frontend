@@ -12,9 +12,15 @@ This application is part of my final step of the Flatiron Bootcamp voyage. Here 
 ### Table of content
 
 1. [Description](#description)
-2. [About Backend ](#about-backend)
-3. [About Frontend](@about-frontend)
-4. [How to install this application](#how-to-install)
+2. [Backend ](#backend)
+   1. [Database](####database)
+   2. [Versoning](####versoning)
+   3. [File structure](####file-structure)
+   4. [Instalation](####instalation)
+3. [Frontend](@frontend)
+   1. [Versoning](####versoning)
+   2. [File structure](####file-structure)
+   3. [Instalation](####instalation)
 5. [How to use this application](#how-to-use)
 6. [Future upgrades](#future-upgrades)
 7. [Bugs](#Bugs)
@@ -24,15 +30,43 @@ This application is part of my final step of the Flatiron Bootcamp voyage. Here 
 
 ---
 
-## About Backend
+## Backend
+
+#### Database 
+The database consists of two tables with `has_many` and `belongs_to` associations between them. 
+![Database](public/Res-rec-app-database.jpeg)
+
+It uses **Rails as API** provider with **PostgreSQL** as database. 
+
+#### Versioning
+**Ruby** version: `2.6.1p33 (2019-01-30 revision 66950) [x86_64-darwin20]`.
+
+**Rails** version: `6.1.4.1 ` 
+#### File structure
+Regular Ruby on Rails file structure
+![Rails-file-structure](public/Rails-app-file-structure.png)
+#### Instalation
+This is [link](https://github.com/zicna/res-rev-backend) for backend GitHub repo. 
+- Fork it
+- Clone it to local enivironment
+- Run following commands
+  ```
+  rails db:create
+  rails db:migrate
+  rails db:seed
+  rails server
+  ```
+  This will create database, migrate the tables and seed them with dummy data from seed.rb file. Server will run on `http://localhost:3001`. Note that we changed default port for `rails server` command from `3000` to `3001`.
 
 ---
 
-## About Frontend
+## Frontend
+#### Versioning
+#### File structure
+#### Instalation
 
----
 
-## How To Install
+
 
 ---
 
