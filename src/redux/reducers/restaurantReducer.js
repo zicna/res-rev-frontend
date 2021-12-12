@@ -15,6 +15,12 @@ const restaurantReducer = (state = defState, action) => {
         ...state,
         restaurants: [...state.restaurants, action.payload],
       };
+      case "DELETE_RESTAURANT":
+        const newRestaurants = state.restaurants.filter(res => res.id !== action.payload)
+        return{
+          ...state,
+          restaurants: newRestaurants
+        }
     default:
       console.log("inside default");
 
