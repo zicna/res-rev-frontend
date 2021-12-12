@@ -24,7 +24,7 @@ export default function MainHeader() {
             </li>
             <li className="nav-item">
               <NavLink to="/restaurants" className="nav-link">
-                Restaurants
+                RESTAURANTS
               </NavLink>
             </li>
           </ul>
