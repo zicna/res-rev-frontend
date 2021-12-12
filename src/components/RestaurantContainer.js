@@ -1,10 +1,11 @@
+// ! NOT IN USE
+
 import React, { Component } from "react";
 
-import { connect } from 'react-redux'
-import {getRestaurants} from '../redux/actions/restaurantAction'
+import { connect } from "react-redux";
+import { getRestaurants } from "../redux/actions/restaurantAction";
 
-
-import RestaurantCard from "./RestaurantCard";
+// import RestaurantCard from "./RestaurantCard";
 import RestaurantList from "./RestaurantList";
 
 class RestaurantContainer extends Component {
@@ -15,22 +16,14 @@ class RestaurantContainer extends Component {
     };
   }
 
-  componentDidMount(){
-      this.props.dispatchSetRestaurants()
-    
+  componentDidMount() {
+    this.props.dispatchSetRestaurants();
   }
-  renderRestaurants = () => {
-    console.log('rendering...')
-    {this.props.restaurants.map(res => <p>{res.name}</p>)}
 
-    
-  }
   render() {
     return (
       <div>
-        <RestaurantList restaurants={this.props.restaurants}/>
-        {/* {this.renderRestaurants()} */}
-        {/* {this.props.restaurants.map(res => <RestaurantCard key={res.id} restaurant={res} />)} */}
+        <RestaurantList restaurants={this.props.restaurants} />
       </div>
     );
   }
@@ -38,15 +31,16 @@ class RestaurantContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    ...state.restaurants
-  }
-}
+    ...state.restaurants,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchSetRestaurants: () => dispatch(getRestaurants())
-  }
-}
+    dispatchSetRestaurants: () => dispatch(getRestaurants()),
+  };
+};
 
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RestaurantContainer);
