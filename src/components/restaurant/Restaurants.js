@@ -1,0 +1,45 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+import RestaurantForm from "./RestaurantForm";
+
+export default class Restaurants extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addNewRestaurant: false,
+      toggleForm: () => this.toggleForm(),
+    };
+  }
+
+  toggleForm = () => {
+    this.setState((prevState) => ({
+      addNewRestaurant: !prevState,
+    }));
+  };
+
+  handleNewResClick = () => {
+    this.setState({
+      addNewRestaurant: true,
+    });
+  };
+
+  renderRestaurants = () =>
+    this.props.restaurants.map((r) => (
+      <Link key={r.id} to={`${this.props.match.url}/${r.id}`}>
+        <div>{r.name}</div>
+      </Link>
+    ));
+  render() {
+    return (
+      <div>
+        {this.state.addNewRestaurant ? (
+          <RestaurantForm toggleForm={this.state.toggleForm} />
+        ) : (
+          <button onClick={this.handleNewResClick}>Add new restaurant</button>
+        )}
+        {this.renderRestaurants()}
+      </div>
+    );
+  }
+}
