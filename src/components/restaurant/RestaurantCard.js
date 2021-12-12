@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import ImageContainer from "../ImageContainer";
 import { connect } from 'react-redux'
 import { deleteRestaurant } from "../../redux/actions/restaurantAction";
+import Reviews from "../review/Reviews";
 
 class RestaurantCard extends Component {
+
+
   
   handleEditClick = () => {
     console.log("Edit was clicked")
@@ -20,19 +23,24 @@ class RestaurantCard extends Component {
     const resObj = restaurants[match.params.id - 1];
 
     return (
-      <div className="card mb-3" style={{ width: "75%" }}>
-        <h3 className="card-header">{resObj.name}</h3>
-        <div className="card-body">
-          <h6 className="card-subtitle text-muted">{resObj.res_type}</h6>
+      <div>
+        <div className="card mb-3" style={{ width: "75%" }}>
+          <h3 className="card-header">{resObj.name}</h3>
+          <div className="card-body">
+            <h6 className="card-subtitle text-muted">{resObj.res_type}</h6>
+          </div>
+          <ImageContainer image={resObj.image} />
+          <div className="card-body">
+            <p className="card-text">{resObj.description}</p>
+          </div>
+          <div className="card-body">Here we will list reviews</div>
+          <div className="card-body">
+            <button onClick={this.handleEditClick}>Edit</button>
+            <button onClick={this.handleDeleteClick}>Delete</button>
+          </div>
         </div>
-        <ImageContainer image={resObj.image} />
-        <div className="card-body">
-          <p className="card-text">{resObj.description}</p>
-        </div>
-        <div className="card-body">Here we will list reviews</div>
-        <div className="card-body">
-          <button onClick={this.handleEditClick}>Edit</button>
-          <button onClick={this.handleDeleteClick}>Delete</button>
+        <div className="card mb-3">
+          <Reviews reviews={resObj.reviews} />
         </div>
       </div>
     );
