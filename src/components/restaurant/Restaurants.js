@@ -26,9 +26,9 @@ export default class Restaurants extends Component {
 
   renderRestaurants = () =>{
     const {restaurants, match} = this.props
-    
-     return restaurants.map((r) => (
-      <Link key={r.id} to={`${match.url}/${r.id}`}>
+
+     return restaurants.map((r, index) => (
+      <Link key={r.id} to={`${match.url}/${index + 1}`}>
         <div>{r.name}</div>
       </Link>
     ));
