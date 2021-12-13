@@ -3,6 +3,7 @@ import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
 import Reviews from '../review/Reviews'
+import { FaTimes } from 'react-icons/fa'
 
 class RestaurantCard extends Component {
   handleEditClick = () => {
@@ -32,7 +33,7 @@ class RestaurantCard extends Component {
           <div>Here we will list reviews</div>
           <div>
             <button onClick={this.handleEditClick}>Edit</button>
-            <button onClick={this.handleDeleteClick}>Delete</button>
+            <button onClick={this.handleDeleteClick}><FaTimes /></button>
           </div>
         </div>
         <div>
