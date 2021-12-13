@@ -1,5 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FaHome } from 'react-icons/fa'
+
+
+
 
 export default function MainHeader() {
   return (
@@ -9,7 +13,7 @@ export default function MainHeader() {
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <NavLink to="/" className="nav-link">
-                HOME
+                <FaHome /> HOME
               </NavLink>
             </li>
             <li className="nav-item">
@@ -19,7 +23,7 @@ export default function MainHeader() {
             </li>
             <li className="nav-item">
               <NavLink to="/contact" className="nav-link">
-                CONTACT
+                 CONTACT
               </NavLink>
             </li>
             <li className="nav-item">
