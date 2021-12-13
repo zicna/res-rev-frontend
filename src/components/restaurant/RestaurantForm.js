@@ -1,29 +1,29 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-import { connect } from "react-redux";
-import { addRestaurant } from "../../redux/actions/restaurantAction";
+import { connect } from 'react-redux'
+import { addRestaurant } from '../../redux/actions/restaurantAction'
 
 class RestaurantForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      name: "",
-      location: "",
-      res_type: "",
-      image: "",
-      description: "",
-    };
+      name: '',
+      location: '',
+      res_type: '',
+      image: '',
+      description: '',
+    }
   }
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
-    });
-  };
+    })
+  }
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    const { name, location, res_type, image, description } = this.state;
+    event.preventDefault()
+    const { name, location, res_type, image, description } = this.state
     const resObj = {
       restaurant: {
         name,
@@ -32,24 +32,24 @@ class RestaurantForm extends Component {
         image,
         description,
       },
-    };
+    }
 
-    this.props.dispatchAddRestaurant(resObj);
+    this.props.dispatchAddRestaurant(resObj)
 
     // * reset local state after submiting form
     this.setState({
-      name: "",
-      location: "",
-      res_type: "",
-      image: "",
-      description: "",
-    });
-    this.props.toggleForm();
-  };
+      name: '',
+      location: '',
+      res_type: '',
+      image: '',
+      description: '',
+    })
+    this.props.toggleForm()
+  }
 
   handleCancel = () => {
-    this.props.toggleForm();
-  };
+    this.props.toggleForm()
+  }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -123,7 +123,7 @@ class RestaurantForm extends Component {
           </div>
         </fieldset>
       </form>
-    );
+    )
   }
 }
 
@@ -131,7 +131,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     dispatchAddRestaurant: (restaurantObj) =>
       dispatch(addRestaurant(restaurantObj)),
-  };
-};
+  }
+}
 
-export default connect(null, mapDispatchToProps)(RestaurantForm);
+export default connect(null, mapDispatchToProps)(RestaurantForm)

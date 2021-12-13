@@ -1,30 +1,26 @@
-import React, { Component } from "react";
-import ImageContainer from "../ImageContainer";
+import React, { Component } from 'react'
+import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
-import { deleteRestaurant } from "../../redux/actions/restaurantAction";
-import Reviews from "../review/Reviews";
+import { deleteRestaurant } from '../../redux/actions/restaurantAction'
+import Reviews from '../review/Reviews'
 
 class RestaurantCard extends Component {
-
-
-  
   handleEditClick = () => {
-    console.log("Edit was clicked")
+    console.log('Edit was clicked')
   }
-  handleDeleteClick =() =>{
-    const { match, restaurants } = this.props;
+  handleDeleteClick = () => {
+    const { match, restaurants } = this.props
     const resObj = restaurants[match.params.id - 1]
     this.props.dispatchDeleteRestaurant(resObj.id)
-    this.props.history.push("/restaurants")
-
+    this.props.history.push('/restaurants')
   }
   renderRestaurant = () => {
-    const { match, restaurants } = this.props;
-    const resObj = restaurants[match.params.id - 1];
+    const { match, restaurants } = this.props
+    const resObj = restaurants[match.params.id - 1]
 
     return (
       <div>
-        <div className="card mb-3" style={{ width: "75%" }}>
+        <div className="card mb-3" style={{ width: '75%' }}>
           <h3 className="card-header">{resObj.name}</h3>
           <div className="card-body">
             <h6 className="card-subtitle text-muted">{resObj.res_type}</h6>
@@ -43,18 +39,17 @@ class RestaurantCard extends Component {
           <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>
-    );
-  };
-
+    )
+  }
 
   render() {
-    return <div>{this.renderRestaurant()}</div>;
+    return <div>{this.renderRestaurant()}</div>
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return{
-    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id))
+  return {
+    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
   }
 }
 

@@ -1,39 +1,39 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import RestaurantForm from "./RestaurantForm";
+import RestaurantForm from './RestaurantForm'
 
 export default class Restaurants extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       addNewRestaurant: false,
       toggleForm: () => this.toggleForm(),
-    };
+    }
   }
 
   toggleForm = () => {
     this.setState((prevState) => ({
       addNewRestaurant: !prevState,
-    }));
-  };
+    }))
+  }
 
   handleNewResClick = () => {
     this.setState({
       addNewRestaurant: true,
-    });
-  };
+    })
+  }
 
-  renderRestaurants = () =>{
-    const {restaurants, match} = this.props
+  renderRestaurants = () => {
+    const { restaurants, match } = this.props
 
-     return restaurants.map((r, index) => (
+    return restaurants.map((r, index) => (
       <Link key={r.id} to={`${match.url}/${index + 1}`}>
         <div>{r.name}</div>
       </Link>
-    ));
+    ))
   }
-  
+
   render() {
     return (
       <div>
@@ -44,6 +44,6 @@ export default class Restaurants extends Component {
         )}
         {this.renderRestaurants()}
       </div>
-    );
+    )
   }
 }

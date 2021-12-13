@@ -5,12 +5,10 @@ const reviewReducer = (state, action) => {
                 ...state,
                 restaurants:[
                     ...state.restaurants,
-                    reviews: [...state.restaurants.reviews]
+                    // reviews: [...state.restaurants.reviews]
                 ]
             }
         default:
             return state
     }
-    
-    
 }
