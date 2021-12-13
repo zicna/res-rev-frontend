@@ -1,13 +1,21 @@
 import React from "react";
 import ReviewCard from "./ReviewCard";
 
-const Reviews = ({reviews}) => {
-  const renderReviews = () => {
-    return reviews.map((review) => (
+class Reviews extends React.Component{
+  constructor(props){
+    super(props)
+    this.state ={
+
+    }
+  }
+  renderReviews = () => {
+    return this.props.reviews.map((review) => (
       <ReviewCard key={review.id} review={review} />
     ));
   };
-  return <div>{renderReviews()}</div>;
+  render(){
+    return <div>{this.renderReviews()}</div>;
+  }
 };
 
 export default Reviews;
