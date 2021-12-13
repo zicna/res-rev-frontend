@@ -7,7 +7,7 @@ export default class ReviewCard extends Component {
     return (
       <div className="card">
         <div className="num-display">{this.props.review.mark}</div>
-        <button className='close'><FaTimes /></button>
+        <button className='close'><FaTimes color='purple'/></button>
         <div className="text-display">{this.props.review.content}</div>
       </div>
     )
