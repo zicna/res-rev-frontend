@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
 import Reviews from '../review/Reviews'
 import { FaTimes } from 'react-icons/fa'
+import RestaurantStats from './RestaurantStats'
 
 class RestaurantCard extends Component {
   handleEditClick = () => {
@@ -40,6 +41,7 @@ class RestaurantCard extends Component {
           </div>
         </div>
         <div>
+          <RestaurantStats rating={resObj.rating} review_count={resObj.review_count}/>
           <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>
