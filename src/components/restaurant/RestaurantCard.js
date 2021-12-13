@@ -40,7 +40,7 @@ class RestaurantCard extends Component {
           </div>
         </div>
         <div className="card mb-3">
-          <Reviews reviews={resObj.reviews} />
+          <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>
     );

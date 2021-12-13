@@ -29,7 +29,7 @@ class Reviews extends React.Component{
   render(){
     return (
     <div>
-      {this.state.addNewReview ? <ReviewForm toggleForm={this.state.toggleForm} /> : <button onClick={this.handleNewReviewClick}>Add new Review</button>}
+      {this.state.addNewReview ? <ReviewForm restaurant={this.props.restaurant} toggleForm={this.state.toggleForm} /> : <button onClick={this.handleNewReviewClick}>Add new Review</button>}
       {this.renderReviews()}
     </div>
     );
