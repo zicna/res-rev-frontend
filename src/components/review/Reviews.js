@@ -1,12 +1,25 @@
 import React from "react";
 import ReviewCard from "./ReviewCard";
+import ReviewForm from "./ReviewForm";
 
 class Reviews extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-
+      addNewReview: false,
+      toggleForm: () => this.toggleForm()
     }
+  }
+
+  toggleForm = () => {
+    this.setState((prevState) => ({
+      addNewReview: !prevState
+    }))
+  }
+  handleNewReviewClick = () => {
+    this.setState({
+      addNewReview: true
+    })
   }
   renderReviews = () => {
     return this.props.reviews.map((review) => (
@@ -14,7 +27,12 @@ class Reviews extends React.Component{
     ));
   };
   render(){
-    return <div>{this.renderReviews()}</div>;
+    return (
+    <div>
+      {this.state.addNewReview ? <ReviewForm /> : <button onClick={this.handleNewReviewClick}>Add new Review</button>}
+      {this.renderReviews()}
+    </div>
+    );
   }
 };
 
