@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 import App from './App';
 
 import { Provider } from 'react-redux'
@@ -10,7 +11,9 @@ import 'bootswatch/dist/materia/bootstrap.min.css'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App className="list-group"/>
+      <div className="container">
+        <App />
+      </div>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
