@@ -2,8 +2,8 @@ import React from 'react'
 import { FaCopyright } from 'react-icons/fa'
 export default function Footer() {
     return (
-        <div>
+        <footer>
             <FaCopyright /> Zicna INC
-        </div>
+        </footer>
     )
 }
