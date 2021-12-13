@@ -48,9 +48,9 @@ class ReviewForm extends Component {
           <legend>
             New Review for {this.props.restaurant.name} restaurant
           </legend>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Your review:</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Your review:</label>
+            <div>
               <input
                 type="textarea"
                 rows="4"
@@ -63,9 +63,9 @@ class ReviewForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Mark:</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Mark:</label>
+            <div>
               <input
                 type="number"
                 min={1}
@@ -77,10 +77,10 @@ class ReviewForm extends Component {
               />
             </div>
           </div>
-          <div className="col-sm-10">
+          <div>
             <button onClick={this.handleCancel}>Cancel</button>
           </div>
-          <div className="col-sm-10">
+          <div>
             <input type="submit" value="Create New Review" />
           </div>
         </fieldset>
