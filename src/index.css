@@ -32,6 +32,15 @@ header {
   margin-bottom: 30px;
 }
 
+footer {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
 .card {
   background-color: #fff;
   color: #333;
@@ -226,4 +235,3 @@ input:focus {
     width: 80%;
   }
 }
-  
