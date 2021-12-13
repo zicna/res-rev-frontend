@@ -10,10 +10,13 @@ class RestaurantCard extends Component {
     console.log('Edit was clicked')
   }
   handleDeleteClick = () => {
-    const { match, restaurants } = this.props
-    const resObj = restaurants[match.params.id - 1]
-    this.props.dispatchDeleteRestaurant(resObj.id)
-    this.props.history.push('/restaurants')
+    if (window.confirm('Are you sure you want to delete?')){
+      const { match, restaurants } = this.props
+      const resObj = restaurants[match.params.id - 1]
+      this.props.dispatchDeleteRestaurant(resObj.id)
+      this.props.history.push('/restaurants')
+    }
+    
   }
   renderRestaurant = () => {
     const { match, restaurants } = this.props
