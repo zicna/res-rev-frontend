@@ -98,7 +98,6 @@ class RestaurantForm extends Component {
               <input
                 type="text"
                 name="image"
-                required
                 value={this.state.image}
                 onChange={this.handleChange}
               />
