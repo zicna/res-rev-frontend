@@ -20,22 +20,22 @@ class RestaurantCard extends Component {
 
     return (
       <div>
-        <div className="card mb-3" style={{ width: '75%' }}>
-          <h3 className="card-header">{resObj.name}</h3>
-          <div className="card-body">
-            <h6 className="card-subtitle text-muted">{resObj.res_type}</h6>
+        <div style={{ width: '75%' }}>
+          <h3>{resObj.name}</h3>
+          <div>
+            <h6>{resObj.res_type}</h6>
           </div>
           <ImageContainer image={resObj.image} />
-          <div className="card-body">
-            <p className="card-text">{resObj.description}</p>
+          <div>
+            <p>{resObj.description}</p>
           </div>
-          <div className="card-body">Here we will list reviews</div>
-          <div className="card-body">
+          <div>Here we will list reviews</div>
+          <div>
             <button onClick={this.handleEditClick}>Edit</button>
             <button onClick={this.handleDeleteClick}>Delete</button>
           </div>
         </div>
-        <div className="card mb-3">
+        <div>
           <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>

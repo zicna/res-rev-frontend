@@ -55,9 +55,9 @@ class RestaurantForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <fieldset>
           <legend>New Restaurant Legend</legend>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Name</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Name</label>
+            <div>
               <input
                 type="text"
                 name="name"
@@ -68,9 +68,9 @@ class RestaurantForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Location</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Location</label>
+            <div>
               <input
                 type="text"
                 name="location"
@@ -80,9 +80,9 @@ class RestaurantForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Restaurant type</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Restaurant type</label>
+            <div>
               <input
                 type="text"
                 name="res_type"
@@ -92,9 +92,9 @@ class RestaurantForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Image</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Image</label>
+            <div>
               <input
                 type="text"
                 name="image"
@@ -103,9 +103,9 @@ class RestaurantForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group row">
-            <label className="col-sm-2 col-form-label">Description</label>
-            <div className="col-sm-10">
+          <div>
+            <label>Description</label>
+            <div>
               <input
                 type="text"
                 name="description"
@@ -115,10 +115,10 @@ class RestaurantForm extends Component {
               />
             </div>
           </div>
-          <div className="col-sm-10">
+          <div>
             <button onClick={this.handleCancel}>Cancel</button>
           </div>
-          <div className="col-sm-10">
+          <div>
             <input type="submit" value="Create New Restaurant" />
           </div>
         </fieldset>

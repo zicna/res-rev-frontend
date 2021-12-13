@@ -3,10 +3,9 @@ import React, { Component } from 'react'
 export default class ReviewCard extends Component {
     render() {
         return (
-            <div className="card-header">
-                <p>Mark: {this.props.review.mark}</p>
-                <p>Content: {this.props.review.content}</p>
-
+            <div className="card">
+                <div classnName='num-display'>{this.props.review.mark}</div>
+                <div className='text-display'>Content: {this.props.review.content}</div>
             </div>
         )
     }
