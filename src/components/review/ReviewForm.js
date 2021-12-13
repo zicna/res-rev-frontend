@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux'
+import { addReview } from '../../redux/actions/reviewAction'
 
-export default class ReviewForm extends Component {
+class ReviewForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,10 +28,9 @@ export default class ReviewForm extends Component {
         }
     }
     // * call method form props, after connection to Redux
+    this.props.dispatchAddReview(reviewObj)
 
     // * reset local state
-    // !option one spread prevState and change content and mark 
-    // !option two
     this.setState({
         content: '',
         mark: '',
@@ -87,3 +88,11 @@ export default class ReviewForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchAddReview: (reviewObject) => dispatch(addReview(reviewObject))
+    }
+}
+
+export default connect()(ReviewForm)
