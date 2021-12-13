@@ -84,6 +84,8 @@ This is [link](https://github.com/zicna/res-rev-backend) for backend GitHub repo
 
 ## License
 
+[MIT](LICENSE)
+
 ---
 
 # Getting Started with Create React App
