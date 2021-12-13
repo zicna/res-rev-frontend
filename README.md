@@ -75,10 +75,15 @@ This is [link](https://github.com/zicna/res-rev-backend) for backend GitHub repo
 ---
 
 ## Future Uppgrades
+- [ ] Styling
+- [ ] Adding user model on backend
+- [ ] Authentication and Authorization (using JWT and devise)
 
 ---
 
 ## Bugs
+1. On hard refresh data is lost 
+2. 
 
 ---
 
