@@ -5,7 +5,7 @@ export default class RestaurantStats extends Component {
         return (
             <div className='feedback-stats'>
                 <h4>{this.props.review_count} Reviews</h4>
-                <h4>Average Rating: {this.props.rating}</h4>
+                <h4>Average Rating: {!this.props.rating ? 0 : this.props.rating}</h4>
             </div>
         )
     }
