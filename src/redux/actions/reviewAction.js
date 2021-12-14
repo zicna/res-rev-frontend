@@ -1,4 +1,5 @@
 const ADD_REVIEW = "ADD_REVIEW"
+const DELETE_REVIEW = "DELETE_REVIEW"
 
 const reviewURL = "http://localhost:3001/reviews"
 
@@ -14,6 +15,18 @@ export const addReview = (reviewObject) => {
         .then(response => response.json())
         .then(data => {
             dispatch({type: ADD_REVIEW, payload: data})
+        })
+    }
+}
+
+export const deleteReview = (id) => {
+    return(dispatch) => {
+        fetch(`${reviewURL}/${id}`, {
+            method: "DELETE",
+        })
+        .then(response => response.json())
+        .then(data => {
+            dispatch({type: DELETE_REVIEW, payload: data})
         })
     }
 }
