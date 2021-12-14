@@ -19,11 +19,6 @@ class RestaurantCard extends Component {
       this.props.dispatchDeleteRestaurant(resObj.id)
       this.props.history.push('/restaurants')
     }
-    
-  }
-  handleDeleteReview = (id) => {
-    console.log('delete was clicked')
-    this.props.deleteReview(id)
   }
   renderRestaurant = () => {
     const { match, restaurants } = this.props
@@ -49,7 +44,7 @@ class RestaurantCard extends Component {
         <div>
           <ReviewForm restaurant={resObj} />
           <RestaurantStats rating={resObj.rating} review_count={resObj.review_count}/>
-          <Reviews restaurant={resObj} reviews={resObj.reviews} deleteReview={this.handleDeleteReview}/>
+          <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>
     )
@@ -62,8 +57,7 @@ class RestaurantCard extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
-    dispatchDeleteReview: (review_id) => dispatch(deleteReview(review_id))
+    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id))
   }
 }
 
