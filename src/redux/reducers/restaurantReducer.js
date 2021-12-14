@@ -31,6 +31,17 @@ const restaurantReducer = (state = defState, action) => {
           state.restaurants[restaurantIndex].reviews.push(action.payload),
         ],
       }
+      case 'DELETE_REVIEW':
+        // debugger
+        const resIndex = state.restaurants.findIndex((res) => res.id === action.payload.restaurant_id)
+
+        return{
+          ...state,
+          restaurants: [
+            ...state.restaurants,
+            state.restaurants[resIndex].reviews.filter(review => review.id !== action.payload.id)
+          ]
+        }
     default:
       return state
   }
