@@ -23,8 +23,7 @@ const restaurantReducer = (state = defState, action) => {
         restaurants: newRestaurants,
       }
     case 'ADD_REVIEW':
-      debugger
-      const restaurantIndex = state.restaurants.findIndex((res) => res.id === action.payload.id)
+      const restaurantIndex = state.restaurants.findIndex((res) => res.id === action.payload.restaurant_id)
       return {
         ...state,
         restaurants: [
