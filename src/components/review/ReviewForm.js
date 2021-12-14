@@ -8,7 +8,7 @@ class ReviewForm extends Component {
     this.state = {
       content: '',
       mark: '',
-      restaurnt_id: this.props.restaurant.id,
+      restaurant_id: this.props.restaurant.id,
     }
   }
 
