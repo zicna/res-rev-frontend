@@ -4,6 +4,6 @@ import reviewReducer from './reviewReducer'
 
 
 export default combineReducers({
-    restaurants: restaurantReducer,
-    reviews: reviewReducer
+    restaurants: restaurantReducer
+    // reviews: reviewReducer
 })
