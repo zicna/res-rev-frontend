@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
+import { deleteReview } from '../../redux/actions/reviewAction'
 import Reviews from '../review/Reviews'
 import { FaTimes } from 'react-icons/fa'
 import RestaurantStats from './RestaurantStats'
@@ -19,6 +20,10 @@ class RestaurantCard extends Component {
       this.props.history.push('/restaurants')
     }
     
+  }
+  handleDeleteReview = (id) => {
+    console.log('delete was clicked')
+    this.props.deleteReview(id)
   }
   renderRestaurant = () => {
     const { match, restaurants } = this.props
@@ -44,7 +49,7 @@ class RestaurantCard extends Component {
         <div>
           <ReviewForm restaurant={resObj} />
           <RestaurantStats rating={resObj.rating} review_count={resObj.review_count}/>
-          <Reviews restaurant={resObj} reviews={resObj.reviews} />
+          <Reviews restaurant={resObj} reviews={resObj.reviews} deleteReview={this.handleDeleteReview}/>
         </div>
       </div>
     )
@@ -58,6 +63,7 @@ class RestaurantCard extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
+    dispatchDeleteReview: (review_id) => dispatch(deleteReview(review_id))
   }
 }
 
