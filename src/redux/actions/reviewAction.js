@@ -23,8 +23,9 @@ export const deleteReview = (id) => {
   return (dispatch) => {
     fetch(`${reviewURL}/${id}`, { method: 'DELETE' })
       .then((response) => {
-          debugger
-          response.json()})
+        debugger
+        response.json()
+      })
       .then((data) => {
         dispatch({ type: DELETE_REVIEW, payload: data })
       })

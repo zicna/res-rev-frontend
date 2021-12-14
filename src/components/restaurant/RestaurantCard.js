@@ -13,7 +13,7 @@ class RestaurantCard extends Component {
     console.log('Edit was clicked')
   }
   handleDeleteClick = () => {
-    if (window.confirm('Are you sure you want to delete?')){
+    if (window.confirm('Are you sure you want to delete?')) {
       const { match, restaurants } = this.props
       const resObj = restaurants[match.params.id - 1]
       this.props.dispatchDeleteRestaurant(resObj.id)
@@ -38,12 +38,17 @@ class RestaurantCard extends Component {
           <div>Here we will list reviews</div>
           <div>
             <button onClick={this.handleEditClick}>Edit</button>
-            <button onClick={this.handleDeleteClick}><FaTimes /></button>
+            <button onClick={this.handleDeleteClick}>
+              <FaTimes />
+            </button>
           </div>
         </div>
         <div>
           <ReviewForm restaurant={resObj} />
-          <RestaurantStats rating={resObj.rating} review_count={resObj.review_count}/>
+          <RestaurantStats
+            rating={resObj.rating}
+            review_count={resObj.review_count}
+          />
           <Reviews restaurant={resObj} reviews={resObj.reviews} />
         </div>
       </div>
@@ -57,7 +62,7 @@ class RestaurantCard extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id))
+    dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
   }
 }
 
