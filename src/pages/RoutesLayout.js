@@ -16,7 +16,7 @@ const RouteLayout = ({restaurants}) => {
         <Route exact path='/about' component={routerProps => < About {...routerProps}/>} />
         <Route exact path='/contact' component={routerProps => < Contact {...routerProps}/>} />
         <Route exact path='/restaurants' component={routerProps => < Restaurants {...routerProps} restaurants={restaurants} />} />
-        <Route exact path='/restaurants/:id' component={routerProps => < RestaurantCard {...routerProps} restaurants={restaurants} />} />
+        <Route exact path='/restaurants/:id' component={routerProps => < RestaurantCard {...routerProps} restaurant={restaurants[routerProps.match.params.id - 1]} />} />
         <Route exact path='/restaurants/:id/edit' component={routerProps => < RestaurantForm {...routerProps} restaurants={restaurants} />} />
         <Route exact path='/restaurants/new' component={routerProps => < RestaurantForm {...routerProps} restaurants={restaurants} />} />
     </Switch>

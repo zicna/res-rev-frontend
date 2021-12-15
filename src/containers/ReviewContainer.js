@@ -6,30 +6,36 @@ import Reviews from '../components/review/Reviews'
 import { connect } from 'react-redux'
 import { deleteReview } from '../redux/actions/reviewAction'
 
-function ReviewContainer({ restaurant }) {
-    
-  const handleDeleteReview = (review_id) => {
-    this.props.dispatchDeleteReview(review_id)
+class ReviewContainer extends React.Component {
+  constructor(props){
+    super(props)
   }
-  return (
-    <div>
-      <ReviewForm restaurant={restaurant} />
-      <ReviewStats
-        rating={restaurant.rating}
-        review_count={restaurant.review_count}
-      />
-      <Reviews
-        restaurant={restaurant}
-        reviews={restaurant.reviews}
-        deleteReview={handleDeleteReview}
-      />
-    </div>
-  )
+  handleDeleteReview = (review_id) =>{
+    this.props.dispatchDeleteReview(review_id)
+    // console.log('hello from review conrtainr delete')
+  }
+  render() {
+    return (
+      <div>
+        <ReviewForm restaurant={this.props.restaurant} />
+        <ReviewStats
+          rating={this.props.restaurant.rating}
+          review_count={this.props.restaurant.review_count}
+        />
+        <Reviews
+          restaurant={this.props.restaurant}
+          reviews={this.props.restaurant.reviews}
+          deleteReview={this.handleDeleteReview}
+        />
+      </div>
+    )
+  }
 }
 // ! this might not be needed ???
 const mapStateToProps = (state) => {
+  // debugger
   return {
-    ...state,
+    ...state.restaurants,
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -37,5 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     dispatchDeleteReview: (id) => dispatch(deleteReview(id)),
   }
 }
+
+// .filter(res => res.id === this.props.restaurant_id)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewContainer)

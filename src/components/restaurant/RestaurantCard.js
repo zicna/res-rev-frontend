@@ -17,25 +17,25 @@ class RestaurantCard extends Component {
   handleDeleteClick = () => {
     if (window.confirm('Are you sure you want to delete?')) {
       const { match, restaurants } = this.props
-      const resObj = restaurants[match.params.id - 1]
-      this.props.dispatchDeleteRestaurant(resObj.id)
+      const restaurant = restaurants[match.params.id - 1]
+      this.props.dispatchDeleteRestaurant(restaurant.id)
       this.props.history.push('/restaurants')
     }
   }
   renderRestaurant = () => {
-    const { match, restaurants } = this.props
-    const resObj = restaurants[match.params.id - 1]
+    const { match, restaurant } = this.props
+    // const restaurant = restaurants[match.params.id - 1]
 
     return (
       <div>
         <div style={{ width: '75%' }}>
-          <h3>{resObj.name}</h3>
+          <h3>{restaurant.name}</h3>
           <div>
-            <h6>{resObj.res_type}</h6>
+            <h6>{restaurant.res_type}</h6>
           </div>
-          <ImageContainer image={resObj.image} />
+          <ImageContainer image={restaurant.image} />
           <div>
-            <p>{resObj.description}</p>
+            <p>{restaurant.description}</p>
           </div>
           <div>Here we will list reviews</div>
           <div>
@@ -46,7 +46,7 @@ class RestaurantCard extends Component {
           </div>
         </div>
         <div>
-          <ReviewContainer restaurant={resObj} />
+          <ReviewContainer restaurant={restaurant} />
         </div>
       </div>
     )
@@ -54,6 +54,7 @@ class RestaurantCard extends Component {
 
   render() {
     return <div>{this.renderRestaurant()}</div>
+    // return <>Hello form Restaurant Card</>
   }
 }
 

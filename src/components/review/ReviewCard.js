@@ -16,5 +16,4 @@ class ReviewCard extends Component {
   }
 }
 
-
 export default ReviewCard
