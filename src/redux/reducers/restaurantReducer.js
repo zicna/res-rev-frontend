@@ -28,12 +28,12 @@ const restaurantReducer = (state = defState, action) => {
         ],
       }
       case 'DELETE_REVIEW':
-        const resIndex = state.restaurants.findIndex((res) => res.id === action.payload.restaurant_id)
-        let resReviews = [...state.restaurants[resIndex].reviews.filter(review => review.id !== action.payload.id)]
+        const resIndex = state.restaurants.findIndex((res) => res.id === action.payload.id)
         return{
           restaurants: [
-            ...state.restaurants,
-            state.restaurants[resIndex].reviews = [...resReviews]
+            ...state.restaurants.slice(0, resIndex),
+            action.payload,
+            ...state.restaurants.slice(resIndex + 1)
           ]
         }
     default:
