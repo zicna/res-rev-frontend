@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
-import { deleteReview } from '../../redux/actions/reviewAction'
-import Reviews from '../review/Reviews'
 import { FaTimes } from 'react-icons/fa'
-import RestaurantStats from './RestaurantStats'
-import ReviewForm from '../review/ReviewForm'
+import ReviewContainer from '../../containers/ReviewContainer'
+// import { deleteReview } from '../../redux/actions/reviewAction'
+// import ReviewStats from '../review/ReviewStats'
+// import ReviewForm from '../review/ReviewForm'
+// import Reviews from '../review/Reviews'
+
 
 class RestaurantCard extends Component {
   handleEditClick = () => {
@@ -44,12 +46,7 @@ class RestaurantCard extends Component {
           </div>
         </div>
         <div>
-          <ReviewForm restaurant={resObj} />
-          <RestaurantStats
-            rating={resObj.rating}
-            review_count={resObj.review_count}
-          />
-          <Reviews restaurant={resObj} reviews={resObj.reviews} />
+          <ReviewContainer restaurant={resObj} />
         </div>
       </div>
     )

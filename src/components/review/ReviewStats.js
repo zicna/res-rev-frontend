@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class RestaurantStats extends Component {
+export default class ReviewStats extends Component {
     render() {
         return (
             <div className='feedback-stats'>

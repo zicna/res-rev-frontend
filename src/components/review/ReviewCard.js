@@ -4,6 +4,9 @@ import { deleteReview } from '../../redux/actions/reviewAction'
 import { FaTimes } from 'react-icons/fa'
 
 class ReviewCard extends Component {
+  constructor(props){
+    super(props)
+  }
   handleDeleteReview = () => {
     this.props.dispatchDeleteReview(this.props.review.id)
   }
