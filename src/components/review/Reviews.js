@@ -6,7 +6,10 @@ class Reviews extends React.Component {
       <p>No reviews for this restaurant</p>
     ) : (
       this.props.reviews.map((review) => (
-        <ReviewCard key={review.id} review={review} />
+        <ReviewCard 
+          key={review.id} 
+          review={review} 
+          deleteReview={this.props.deleteReview}/>
       ))
     )
   }
