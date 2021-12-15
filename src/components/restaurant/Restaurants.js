@@ -28,7 +28,7 @@ export default class Restaurants extends Component {
     const { restaurants, match } = this.props
 
     return restaurants.map((r, index) => (
-      <Link key={r.id} to={`${match.url}/${index + 1}`}>
+      <Link  key={r.id} to={`${match.url}/${index + 1}`}>
         <div>{r.name}</div>
       </Link>
     ))
@@ -40,7 +40,7 @@ export default class Restaurants extends Component {
         {this.state.addNewRestaurant ? (
           <RestaurantForm toggleForm={this.state.toggleForm} />
         ) : (
-          <button onClick={this.handleNewResClick}>Add new restaurant</button>
+          <button className='btn btn-primary'onClick={this.handleNewResClick}>Add new restaurant</button>
         )}
         {this.renderRestaurants()}
       </div>
