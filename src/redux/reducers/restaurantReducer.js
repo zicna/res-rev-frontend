@@ -20,11 +20,12 @@ const restaurantReducer = (state = defState, action) => {
         restaurants: newRestaurants,
       }
     case 'ADD_REVIEW':
-      const restaurantIndex = state.restaurants.findIndex((res) => res.id === action.payload.restaurant_id)
+      const restaurantIndex = state.restaurants.findIndex((res) => res.id === action.payload.id)
       return {
         restaurants: [
-          ...state.restaurants,
-          state.restaurants[restaurantIndex].reviews.unshift(action.payload),
+          ...state.restaurants.slice(0, restaurantIndex),
+            action.payload,
+            ...state.restaurants.slice(restaurantIndex + 1)
         ],
       }
       case 'DELETE_REVIEW':
