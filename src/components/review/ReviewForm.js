@@ -67,7 +67,7 @@ class ReviewForm extends Component {
                   required
                 />
               </div>
-              <input type="submit" value="Send" />
+              <input className='btn-secundary'type="submit" value="Send" />
             </div>
           </fieldset>
         </form>

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
+html, body{
+  height: 100%;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,6 +13,10 @@ body {
   background-color: #202142;
   color: #fff;
   line-height: 1.6;
+  /* adding style to stick footer to bottom */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 ul {
@@ -24,12 +30,13 @@ ul {
 }
 
 header {
-  height: 70px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  background-color: aquamarine;
 }
 
 footer {
@@ -39,6 +46,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  margin: auto;
+  background-color: aquamarine;
+
 }
 
 .card {
