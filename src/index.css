@@ -42,13 +42,19 @@ ul {
 }
 
 header {
-  height: 100px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
   background-color: var(--sec-bg-color);
+  padding: 20px;
+}
+header::after{
+  content:'';
+  display: table;
+  clear: both;
 }
 
 footer {
@@ -59,9 +65,57 @@ footer {
   align-items: center;
   margin-top: 30px;
   margin: auto;
+  padding: 20px;
   background-color: var(--sec-bg-color);
 
 }
+
+.logo{
+  float: left;
+  padding-top: 25px;
+
+}
+
+nav{
+  float: right;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav ul > li > a{
+  text-transform: uppercase;
+}
+/* nav ul > li > a:hover{
+  background-color: black;
+  color: white;
+} */
+nav a::before{
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  position: absolute;
+  top:0;
+  width: 0;
+  transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before{
+  width: 100%;
+}
+
 
 .card {
   background-color: #fff;
