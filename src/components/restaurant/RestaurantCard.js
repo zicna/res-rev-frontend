@@ -3,10 +3,12 @@ import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
 import { deleteReview } from '../../redux/actions/reviewAction'
+import { editReview } from '../../redux/actions/reviewAction'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 import ReviewContainer from '../../containers/ReviewContainer'
 
 class RestaurantCard extends Component {
+  // ! this is for editing restaurants
   handleEditClick = () => {
     console.log('Edit was clicked')
   }
@@ -49,7 +51,7 @@ class RestaurantCard extends Component {
           <ReviewContainer
             restaurant={this.props.restaurants[match.params.id - 1]}
             deleteReview={this.props.dispatchDeleteReview}
-            editReveiw={this.handleEditClick}
+            editReview={this.props.dispatchEditReview}
           />
         </div>
       </div>
@@ -71,6 +73,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
     dispatchDeleteReview: (review_id) => dispatch(deleteReview(review_id)),
+    dispatchEditReview: (reviewObject) => dispatch(editReview(reviewObject)),
+
   }
 }
 

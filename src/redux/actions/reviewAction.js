@@ -32,9 +32,9 @@ export const deleteReview = (id) => {
   }
 }
 
-export const editRevew = (id, reviewObject) => {
+export const editReview = (reviewObject) => {
   return(dispatch) => {
-    fetch(`${reviewURL}/${id}`, {
+    fetch(`${reviewURL}/${reviewObject.id}`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
