@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addReview } from '../../redux/actions/reviewAction'
+import RatingSelect from './RatingSelect'
 
 class ReviewForm extends Component {
   constructor(props) {
@@ -16,6 +17,15 @@ class ReviewForm extends Component {
     this.setState({
       [event.target.name]: event.target.value,
     })
+  }
+  setRating = (value) => {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        mark: value,
+      }
+    })
+    console.log(`hello from set rating; value: ${value}`)
   }
   handleSubmit = (event) => {
     event.preventDefault()
@@ -43,6 +53,7 @@ class ReviewForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <fieldset>
             <h2>How would you rate {this.props.restaurant.name} restaurant?</h2>
+            <RatingSelect setRating={this.setRating} />
             <div className="input-group">
               <input
                 type="textarea"
@@ -55,19 +66,7 @@ class ReviewForm extends Component {
                 autoFocus
                 placeholder="Write a review"
               />
-              <label>Mark:</label>
-              <div>
-                <input
-                  type="number"
-                  min={1}
-                  max={10}
-                  name="mark"
-                  value={this.state.mark}
-                  onChange={this.handleChange}
-                  required
-                />
-              </div>
-              <input className='btn-secundary'type="submit" value="Send" />
+              <input className="btn-secundary" type="submit" value="Send" />
             </div>
           </fieldset>
         </form>
