@@ -3,7 +3,7 @@ import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
 import { deleteReview } from '../../redux/actions/reviewAction'
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaEdit } from 'react-icons/fa'
 import ReviewContainer from '../../containers/ReviewContainer'
 
 class RestaurantCard extends Component {
@@ -24,7 +24,7 @@ class RestaurantCard extends Component {
 
     return (
       <div>
-        <div style={{ width: '75%' }}>
+        <div className="card">
           <h3>{restaurantObject.name}</h3>
           <div>
             <h6>{restaurantObject.res_type}</h6>
@@ -33,10 +33,14 @@ class RestaurantCard extends Component {
           <div>
             <p>{restaurantObject.description}</p>
           </div>
-          <div>Here we will list reviews</div>
           <div>
-            <button className="btn btn-primary" onClick={this.handleEditClick}>Edit</button>
-            <button className="btn btn-primary" onClick={this.handleDeleteClick}>
+            <button className="btn btn-primary" onClick={this.handleEditClick}>
+              <FaEdit />
+            </button>
+            <button
+              className="btn btn-primary"
+              onClick={this.handleDeleteClick}
+            >
               <FaTimes />
             </button>
           </div>
