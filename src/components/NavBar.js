@@ -7,7 +7,6 @@ import { FaHome } from 'react-icons/fa'
 
 export default function MainHeader() {
   return (
-    <header>
       <nav >
         <div>
           <ul>
@@ -34,6 +33,5 @@ export default function MainHeader() {
           </ul>
         </div>
       </nav>
-    </header>
   );
 }
