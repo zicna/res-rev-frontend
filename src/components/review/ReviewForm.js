@@ -30,22 +30,28 @@ class ReviewForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { content, mark, restaurant_id } = this.state
-    const reviewObj = {
-      review: {
-        content,
-        mark,
-        restaurant_id,
-      },
-    }
-    // * call method form props, after connection to Redux
-    this.props.dispatchAddReview(reviewObj)
+    if (content.length < 10) {
+      window.alert('Review must be 10 characters or more')
+    } else if (mark === '') {
+      window.alert('Please select rating before sending review!')
+    } else {
+      const reviewObj = {
+        review: {
+          content,
+          mark,
+          restaurant_id,
+        },
+      }
+      // * call method form props, after connection to Redux
+      this.props.dispatchAddReview(reviewObj)
 
-    // * reset local state
-    this.setState({
-      content: '',
-      mark: '',
-      restaurant_id: this.props.restaurant.id,
-    })
+      // * reset local state
+      this.setState({
+        content: '',
+        mark: '',
+        restaurant_id: this.props.restaurant.id,
+      })
+    }
   }
   render() {
     return (
