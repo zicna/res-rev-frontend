@@ -3,20 +3,15 @@ import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
 import { deleteReview } from '../../redux/actions/reviewAction'
-
 import { FaTimes } from 'react-icons/fa'
 import ReviewContainer from '../../containers/ReviewContainer'
-// import { deleteReview } from '../../redux/actions/reviewAction'
-// import ReviewStats from '../review/ReviewStats'
-// import ReviewForm from '../review/ReviewForm'
-// import Reviews from '../review/Reviews'
 
 class RestaurantCard extends Component {
   handleEditClick = () => {
     console.log('Edit was clicked')
   }
   handleDeleteClick = () => {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Are you sure you want to delete restaurant?')) {
       const { match, restaurants } = this.props
       const restaurant = restaurants[match.params.id - 1]
       this.props.dispatchDeleteRestaurant(restaurant.id)
@@ -40,8 +35,8 @@ class RestaurantCard extends Component {
           </div>
           <div>Here we will list reviews</div>
           <div>
-            <button onClick={this.handleEditClick}>Edit</button>
-            <button onClick={this.handleDeleteClick}>
+            <button className="btn btn-primary" onClick={this.handleEditClick}>Edit</button>
+            <button className="btn btn-primary" onClick={this.handleDeleteClick}>
               <FaTimes />
             </button>
           </div>
