@@ -28,9 +28,12 @@ export default class Restaurants extends Component {
     const { restaurants, match } = this.props
 
     return restaurants.map((r, index) => (
-      <Link  key={r.id} to={`${match.url}/${index + 1}`}>
-        <div>{r.name}</div>
-      </Link>
+    
+      <div className="card" key={r.id}>
+        <Link to={`${match.url}/${index + 1}`} >
+          <div >{r.name}</div>
+        </Link>
+      </div>
     ))
   }
 
