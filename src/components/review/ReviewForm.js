@@ -72,7 +72,7 @@ class ReviewForm extends Component {
                 autoFocus
                 placeholder="Write a review"
               />
-              <input className="btn-secundary" type="submit" value="Send" />
+              <input className="btn btn-secondary" type="submit" value="Send" />
             </div>
           </fieldset>
         </form>

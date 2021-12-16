@@ -40,7 +40,7 @@ export default class Restaurants extends Component {
         {this.state.addNewRestaurant ? (
           <RestaurantForm toggleForm={this.state.toggleForm} />
         ) : (
-          <button className='btn btn-primary'onClick={this.handleNewResClick}>Add new restaurant</button>
+          <button className='btn btn-secondary' onClick={this.handleNewResClick}>Add</button>
         )}
         {this.renderRestaurants()}
       </div>

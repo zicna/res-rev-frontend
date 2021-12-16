@@ -116,10 +116,10 @@ class RestaurantForm extends Component {
             </div>
           </div>
           <div>
-            <button onClick={this.handleCancel}>Cancel</button>
+            <button className="btn btn-secondary" onClick={this.handleCancel}>Cancel</button>
           </div>
           <div>
-            <input type="submit" value="Create New Restaurant" />
+            <input className="btn btn-secondary"type="submit" value="Create" />
           </div>
         </fieldset>
       </form>
