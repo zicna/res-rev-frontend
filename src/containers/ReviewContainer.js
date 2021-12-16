@@ -4,9 +4,6 @@ import ReviewStats from '../components/review/ReviewStats'
 import Reviews from '../components/review/Reviews'
 
 class ReviewContainer extends React.Component {
-  constructor(props){
-    super(props)
-  }
   render() {
     return (
       <div>

@@ -52,7 +52,7 @@ class RestaurantForm extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="card" onSubmit={this.handleSubmit}>
         <fieldset>
           <legend>New Restaurant Legend</legend>
           <div>
@@ -119,7 +119,7 @@ class RestaurantForm extends Component {
             <button className="btn btn-secondary" onClick={this.handleCancel}>Cancel</button>
           </div>
           <div>
-            <input className="btn btn-secondary"type="submit" value="Create" />
+            <input className="btn btn-primary"type="submit" value="Create" />
           </div>
         </fieldset>
       </form>
