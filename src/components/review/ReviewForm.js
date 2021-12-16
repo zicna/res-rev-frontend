@@ -25,7 +25,6 @@ class ReviewForm extends Component {
         mark: value,
       }
     })
-    console.log(`hello from set rating; value: ${value}`)
   }
   handleSubmit = (event) => {
     event.preventDefault()

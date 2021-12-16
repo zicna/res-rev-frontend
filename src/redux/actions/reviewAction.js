@@ -34,6 +34,7 @@ export const deleteReview = (id) => {
 
 export const editReview = (reviewObject) => {
   return(dispatch) => {
+    debugger
     fetch(`${reviewURL}/${reviewObject.id}`, {
       method: 'PATCH',
       headers: {
