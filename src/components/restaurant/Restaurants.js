@@ -39,14 +39,16 @@ export default class Restaurants extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.addNewRestaurant ? (
-          <RestaurantForm toggleForm={this.state.toggleForm} />
-        ) : (
-          <button className='btn btn-secondary' onClick={this.handleNewResClick}>Add</button>
-        )}
+      <>
+        <div>
+          {this.state.addNewRestaurant ? (
+            <RestaurantForm toggleForm={this.state.toggleForm} />
+          ) : (
+            <button className='btn btn-primary' onClick={this.handleNewResClick}>Add</button>
+          )}
+        </div>
         {this.renderRestaurants()}
-      </div>
+      </>
     )
   }
 }
