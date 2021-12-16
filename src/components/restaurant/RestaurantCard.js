@@ -49,6 +49,7 @@ class RestaurantCard extends Component {
           <ReviewContainer
             restaurant={this.props.restaurants[match.params.id - 1]}
             deleteReview={this.props.dispatchDeleteReview}
+            editReveiw={this.handleEditClick}
           />
         </div>
       </div>

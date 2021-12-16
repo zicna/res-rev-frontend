@@ -1,6 +1,6 @@
 import React from 'react'
 import ReviewCard from './ReviewCard'
-const Reviews = ({reviews, deleteReview, restaurant}) => {
+const Reviews = ({reviews, deleteReview, restaurant, editReview}) => {
   const renderReviews = () => {
     return reviews.length === 0 ? (
       <p>No reviews for this restaurant</p>
@@ -10,6 +10,7 @@ const Reviews = ({reviews, deleteReview, restaurant}) => {
           key={review.id}
           review={review}
           deleteReview={deleteReview}
+          editReview={editReview}
           restaurant={restaurant}
         />
       ))
