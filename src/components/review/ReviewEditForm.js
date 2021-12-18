@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RatingSelect from './RatingSelect'
 import { connect } from 'react-redux'
+import { editReview } from '../../redux/actions/reviewAction'
 
 class ReviewEditForm extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ class ReviewEditForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.dispatchEditReview(this.state)
 
     
         console.log('submiting from edit form')
@@ -57,12 +59,12 @@ class ReviewEditForm extends Component {
 
 const mapPropsToState = (state) => {
     return {
-
+        ...state
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        
+        dispatchEditReview: (reviewObject) => dispatch(editReview(reviewObject))
     }
 }
 
