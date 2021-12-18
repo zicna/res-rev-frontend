@@ -15,8 +15,6 @@ class ReviewContainer extends React.Component {
         <Reviews
           restaurant={this.props.restaurant}
           reviews={this.props.restaurant.reviews}
-          deleteReview={this.props.deleteReview}
-          editReview={this.props.editReview}
         />
       </div>
     )

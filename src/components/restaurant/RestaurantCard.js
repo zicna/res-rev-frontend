@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import ImageContainer from '../ImageContainer'
 import { connect } from 'react-redux'
 import { deleteRestaurant } from '../../redux/actions/restaurantAction'
-import { deleteReview } from '../../redux/actions/reviewAction'
-import { editReview } from '../../redux/actions/reviewAction'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 import ReviewContainer from '../../containers/ReviewContainer'
 
@@ -50,8 +48,6 @@ class RestaurantCard extends Component {
         <div>
           <ReviewContainer
             restaurant={this.props.restaurants[match.params.id - 1]}
-            deleteReview={this.props.dispatchDeleteReview}
-            editReview={this.props.dispatchEditReview}
           />
         </div>
       </div>
@@ -72,9 +68,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatchDeleteRestaurant: (id) => dispatch(deleteRestaurant(id)),
-    dispatchDeleteReview: (review_id) => dispatch(deleteReview(review_id)),
-    dispatchEditReview: (reviewObject) => dispatch(editReview(reviewObject)),
-
   }
 }
 

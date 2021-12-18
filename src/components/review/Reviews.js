@@ -9,8 +9,6 @@ const Reviews = ({reviews, deleteReview, restaurant, editReview}) => {
         <ReviewCard
           key={review.id}
           review={review}
-          deleteReview={deleteReview}
-          editReview={editReview}
           restaurant={restaurant}
         />
       ))

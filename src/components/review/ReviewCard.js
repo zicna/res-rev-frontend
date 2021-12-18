@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { FaTimes, FaEdit } from 'react-icons/fa'
+import { connect } from 'react-redux'
+import { deleteReview, editReview } from '../../redux/actions/reviewAction'
 
 class ReviewCard extends Component {
   constructor(props) {
@@ -14,14 +16,12 @@ class ReviewCard extends Component {
     }
   }
 
-  // handleEditClick = ({ id, restaurant_id, mark, content }) => {
-
   render() {
     return (
       <div className="card">
         <div className="num-display">{this.props.review.mark}</div>
         <button
-          onClick={() => this.props.deleteReview(this.props.review.id)}
+          onClick={() => this.props.dispatchDeleteReview(this.props.review.id)}
           className="close"
         >
           <FaTimes color="purple" />
@@ -38,4 +38,17 @@ class ReviewCard extends Component {
   }
 }
 
-export default ReviewCard
+const mapStateToProps = (state) => {
+  return {
+    ...state.restaurnats,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchDeleteReview: (review_id) => dispatch(deleteReview(review_id)),
+    dispatchEditReview: (reviewObject) => dispatch(editReview(reviewObject)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewCard)
