@@ -27,7 +27,7 @@ class ReviewCard extends Component {
           <FaTimes color="purple" />
         </button>
         <button
-          onClick={() => this.handleEditClick(this.props.review)}
+          onClick={() => this.props.editReview(this.props.review)}
           className="edit"
         >
           <FaEdit color="purple" />

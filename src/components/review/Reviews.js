@@ -10,6 +10,7 @@ const Reviews = ({reviews, deleteReview, restaurant, editReview}) => {
           key={review.id}
           review={review}
           restaurant={restaurant}
+          editReview={editReview}
         />
       ))
     )
