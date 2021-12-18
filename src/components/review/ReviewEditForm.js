@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import RatingSelect from './RatingSelect'
+import { connect } from 'react-redux'
 
-export default class ReviewEditForm extends Component {
+class ReviewEditForm extends Component {
     constructor(props){
         super(props)
         this.state={
@@ -13,6 +14,8 @@ export default class ReviewEditForm extends Component {
     }
 
     handleSubmit = (event) => {
+        event.preventDefault()
+
     
         console.log('submiting from edit form')
     }
@@ -51,3 +54,16 @@ export default class ReviewEditForm extends Component {
         )
       }
 }
+
+const mapPropsToState = (state) => {
+    return {
+
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        
+    }
+}
+
+export default connect(mapPropsToState, mapDispatchToProps)(ReviewEditForm)
