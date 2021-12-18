@@ -26,7 +26,15 @@ class ReviewEditForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-        
+    }
+
+    setRating = (value) => {
+        this.setState((prevState) => {
+            return {
+                ...prevState,
+                mark: value
+            }
+        })
     }
 
     render() {
@@ -35,7 +43,7 @@ class ReviewEditForm extends Component {
             <form onSubmit={this.handleSubmit}>
               <fieldset>
                 <h2>How would you rate {this.props.restaurant.name} restaurant?</h2>
-                <RatingSelect setRating={this.setRating} />
+                <RatingSelect setRating={this.setRating} selected={this.state.mark}/>
                 <div className="input-group">
                   <input
                     type="textarea"
