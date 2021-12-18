@@ -1,6 +1,6 @@
 const ADD_REVIEW = 'ADD_REVIEW'
 const DELETE_REVIEW = 'DELETE_REVIEW'
-const EDIT_REVIEW = "EDIT_REVIEW"
+const EDIT_REVIEW = 'EDIT_REVIEW'
 
 const reviewURL = 'http://localhost:3001/reviews'
 
@@ -33,20 +33,17 @@ export const deleteReview = (id) => {
 }
 
 export const editReview = (reviewObject) => {
-  return(dispatch) => {
-    debugger
+  return (dispatch) => {
     fetch(`${reviewURL}/${reviewObject.id}`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(reviewObject)
+      body: JSON.stringify(reviewObject),
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-      debugger
-      dispatch({type: EDIT_REVIEW, payload: data})
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({ type: EDIT_REVIEW, payload: data })
+      })
   }
 }
