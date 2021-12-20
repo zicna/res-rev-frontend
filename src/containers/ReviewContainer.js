@@ -40,7 +40,7 @@ class ReviewContainer extends React.Component {
         />
         <Reviews
           restaurant={this.props.restaurant}
-          reviews={this.props.restaurant.reviews}
+          reviews={this.props.restaurant.reviews.reverse()}
           editReview={this.handleEditReview}
         />
       </div>

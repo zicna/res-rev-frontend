@@ -68,7 +68,6 @@ class ReviewForm extends Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 required
-                autoFocus
                 placeholder="Write a review"
               />
               <input className="btn btn-secondary" type="submit" value="Send" />

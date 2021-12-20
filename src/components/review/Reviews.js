@@ -5,7 +5,7 @@ const Reviews = ({reviews, deleteReview, restaurant, editReview}) => {
     return reviews.length === 0 ? (
       <p>No reviews for this restaurant</p>
     ) : (
-      reviews.slice().reverse().map((review) => (
+      reviews.map((review) => (
         <ReviewCard
           key={review.id}
           review={review}
