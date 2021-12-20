@@ -67,8 +67,19 @@ footer {
   margin: auto;
   padding: 20px;
   background-color: var(--sec-bg-color);
+  /* position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden; */
 
 }
+
+/* .app {
+  position: relative;
+  min-height: 100%;
+} */
 
 .logo{
   float: left;
