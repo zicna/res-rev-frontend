@@ -9,6 +9,7 @@ export default class Restaurants extends Component {
     this.state = {
       addNewRestaurant: false,
       toggleForm: () => this.toggleForm(),
+      factor: 0
     }
   }
 
@@ -24,6 +25,16 @@ export default class Restaurants extends Component {
     })
   }
 
+  handleClick = (event) => {
+    if (event.target.innerText === "Add points" ){
+      event.target.innerText = 0
+    }else if (parseInt(event.target.innerText) === 0 ){
+      event.target.innerText = parseInt(event.target.innerText) + parseInt(this.state.factor)
+    }else{
+      event.target.innerText = parseInt(event.target.innerText) * parseInt(this.state.factor)
+    }
+  }
+
   renderRestaurants = () => {
     const { restaurants, match } = this.props
 
@@ -33,13 +44,28 @@ export default class Restaurants extends Component {
         <Link to={`${match.url}/${index + 1}`} >
           <div >{r.name}</div>
         </Link>
+        <div><button onClick={this.handleClick}>Add points</button></div>
+
+
+
       </div>
     ))
+  }
+
+  handleChangeFactor = (event) => {
+    this.setState({
+      factor: event.target.value
+    })
   }
 
   render() {
     return (
       <>
+
+      <input 
+      type="number"
+      onChange={this.handleChangeFactor}
+      value={this.state.factor} />
         <div>
           {this.state.addNewRestaurant ? (
             <RestaurantForm toggleForm={this.state.toggleForm} />
