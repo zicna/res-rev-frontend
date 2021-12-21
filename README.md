@@ -4,7 +4,8 @@
 
 ### Intro:
 
-This application is part of my final step of the Flatiron Bootcamp voyage. Here we can add new restaurants or browse through ones already in it and create reviews for them as a guide for a better restaurant experience. Enjoy!
+This application is part of my final step of the Flatiron Bootcamp voyage. In this application we can add, edit or delete restaurants,  browse through ones already in it. For each restaurant we can add new, delete or edit old reviews which will afect restaurant rating as a guide for a better restaurant experience. Enjoy!
+
 ![](https://image.shutterstock.com/image-photo/five-stars-on-dark-background-260nw-645742324.jpg)
 
 ---
@@ -56,21 +57,42 @@ This is [link](https://github.com/zicna/res-rev-backend) for backend GitHub repo
   rails db:seed
   rails server
   ```
-  This will create database, migrate the tables and seed them with dummy data from seed.rb file. Server will run on `http://localhost:3001`. Note that we changed default port for `rails server` command from `3000` to `3001`.
+  This will create database, migrate the tables and seed them with dummy data from *seed.rb* file. Server will run on `http://localhost:3001`. Note that we changed default port for `rails server` command from `3000` to `3001`.
 
 ---
 
 ## Frontend
-#### Versioning
+#### Versioning of React and main dependencies
+```
+"react": "^17.0.2",
+ "react-dom": "^17.0.2",
+ "react-icons": "^4.3.1",
+ "react-redux": "^7.2.6",
+ "react-router-dom": "^5.3.0",
+ "redux": "^4.1.2",
+ "redux-thunk": "^2.4.1",
+```
+
 #### File structure
+![React file structure](public/react-file-structure.png)
 #### Instalation
+After foking and cloning to local environment navigate to root directory. 
 
+Run following commands:
 
+`npm install` this will install all modules taht are listed in `package.json` file and their dependencies.
+
+`npm start` this will runs predefined command specified in the `start` property of package's `scripts` which is `react-scripts start` 
+
+*Note:*
+`react-scripts start` sets up the develpoment environment and starts a server
 
 
 ---
 
 ## How To Use
+
+After everything is up and running we can navigate to `localhost:3000` which will be home page fo our application. 
 
 ---
 
