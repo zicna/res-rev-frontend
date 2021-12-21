@@ -3,7 +3,7 @@ import ReviewCard from './ReviewCard'
 const Reviews = ({reviews, deleteReview, restaurant, editReview}) => {
   const renderReviews = () => {
     return reviews.length === 0 ? (
-      <p>No reviews for this restaurant</p>
+      <div className='card'>No reviews for this restaurant</div>
     ) : (
       reviews.map((review) => (
         <ReviewCard
