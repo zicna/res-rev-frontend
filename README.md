@@ -7,7 +7,7 @@
 This application is part of my final step of the Flatiron Bootcamp voyage. In this application we can add, edit or delete restaurants, browse through ones already in it. For each restaurant we can add new, delete or edit old reviews which will afect restaurant rating as a guide for a better restaurant experience. Enjoy!
 
 
-![Five wouden starts with tomatoes and other herbs]("public/Restaurant-reviewer.jpg")
+![Five wouden starts with tomatoes and other herbs](public/Restaurant-reviewer.jpg)
 
 ---
 
