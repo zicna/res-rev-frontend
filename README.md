@@ -52,7 +52,13 @@ It uses **Rails as API** provider with **PostgreSQL** as database.
 #### File structure
 
 Regular Ruby on Rails file structure
+<details>
+<summary>
+File structure
+</summary>
+
 ![Rails-file-structure](public/Rails-app-file-structure.png)
+</details>
 
 #### Instalation
 
@@ -86,8 +92,13 @@ This is [link](https://github.com/zicna/res-rev-backend) for backend GitHub repo
 ```
 
 #### File structure
+<details>
+<summary>
+File structure
+</summary>
 
 ![React file structure](public/react-file-structure.png)
+</details>
 
 #### Instalation
 
